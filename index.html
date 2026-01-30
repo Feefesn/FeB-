@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F+B ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="heart-background">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+
+        <!-- Botão de música (tocar/pausar ao clicar) -->
+        <div class="music-panel">
+            <button class="music-btn" id="musicBtn" title="Tocar / Pausar">
+                <span class="music-icon">🎵</span>
+            </button>
+        </div>
+        <audio id="bgAudio" loop preload="auto" style="display:none"></audio>
+
+        <div class="content">
+            <div class="cards-grid">
+                <div class="card hero-card col-12">
+                    <h1>Nosso Amor</h1>
+                    <p class="subtitle">Desde o dia que mudou tudo...</p>
+                </div>
+
+                <div class="card col-6">
+                    <h2>Contador</h2>
+                    <div class="counter-container">
+                        <div class="counter-box">
+                            <span class="number" id="days">0</span>
+                            <span class="label">Dias</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="number" id="hours">0</span>
+                            <span class="label">Horas</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="number" id="minutes">0</span>
+                            <span class="label">Minutos</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="number" id="seconds">0</span>
+                            <span class="label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-6">
+                    <h2>Estatísticas</h2>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number" id="weeks">0</span>
+                            <span class="stat-label">Semanas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="months">0</span>
+                            <span class="stat-label">Meses</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalHours">0</span>
+                            <span class="stat-label">Horas Totais</span>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <!-- (Seções "Motivos" e "Memórias" removidas) -->
+            </div>
+
+            <div class="cards-grid" style="margin-top:18px;">
+                    <div class="card col-12">
+                        <h2>Frases Românticas <span class="emoji">💝</span></h2>
+                        <div class="quote-container">
+                            <p class="quote" id="randomQuote"></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Playlist removed; background music is single-track only -->
+
+                <div class="card col-6">
+                    <h2>Contador de Beijos <span class="emoji">💋</span></h2>
+                    <div class="kiss-display">
+                        <span class="kiss-number" id="kissCount">0</span>
+                        <button class="kiss-btn" id="kissBtn">Dar um Beijo <span class="emoji">💋</span></button>
+                    </div>
+                </div>
+
+            <div class="card col-6">
+                <h2>Carta <span class="emoji">💌</span></h2>
+                <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+                    <p>Abra a carta ai rsrs.</p>
+                    <div style="display:flex;gap:8px;">
+                        <button class="generate-letter-btn" id="openLetterBtn">Abrir Carta</button>
+                    </div>
+                </div>
+                <div class="letter-content" id="letterContent" style="white-space:pre-wrap;margin-top:12px;text-align:left;"></div>
+            </div>
+
+                <div class="card col-6">
+                    <h2>Clima do Relacionamento <span class="emoji">💑</span></h2>
+                    <div class="mood-buttons">
+                        <button class="mood-btn" data-mood="amazing" title="Incrível">🥰</button>
+                        <button class="mood-btn" data-mood="happy" title="Feliz">😊</button>
+                        <button class="mood-btn" data-mood="normal" title="Normal">😌</button>
+                        <button class="mood-btn" data-mood="sad" title="Triste">😢</button>
+                    </div>
+                    <div class="current-mood" id="currentMood" aria-live="polite" style="margin-top:10px;text-align:center;font-size:2rem;">&nbsp;</div>
+                    <div class="mood-history" id="moodHistory" style="margin-top:12px;"></div>
+                </div>
+
+                <div class="card col-6">
+                    <h2>Datas <span class="emoji">📅</span></h2>
+                    <div class="date-info" style="text-align:left;">
+                        <p>Juntos desde: <strong id="startDate"></strong></p>
+                        <p class="next-anniversary">Próximo mesversário: <strong id="nextAnniversary"></strong></p>
+                    </div>
+                    <div style="margin-top:12px;text-align:center;">
+                        <button class="clear-data-btn" id="clearDataBtn">Limpar Todos os Dados</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
